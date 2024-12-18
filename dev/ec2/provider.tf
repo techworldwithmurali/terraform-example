@@ -1,5 +1,7 @@
 provider "aws" {
   region     = "us-east-1"
-  #  profile = "dev"
-  role_arn = "arn:aws:iam::266735810449:role/dev-admin-role"
+#    profile = "dev"
+  assume_role {
+   role_arn = "arn:aws:iam::779031380725:role/dev-admin-role"
+ }
 }
