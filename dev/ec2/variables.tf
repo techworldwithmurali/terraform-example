@@ -1,6 +1,6 @@
 
 variable "ami" {
-  default = "ami-012967cc5a8c9f891"
+  default = "ami-01816d07b1128cd2d"
   type        = string
 }
 
@@ -11,14 +11,14 @@ variable "instance-type" {
 }
 
 variable "subnet-id" {
-  default = "subnet-0ab8d3e404d04be99"
+  default = "subnet-04936efc8b77ecb70"
   type        = string
 }
 
 variable "tags" {
   default = {
-    Name = "infra-ec2-instance"
-    env  = "infra"
+    Name = "dev-ec2-instance"
+    env  = "dev"
     team = "devops"
   }
 type        = map(string)
