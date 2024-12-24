@@ -1,7 +1,7 @@
 terraform {
   required_version = "~> 1.9.0"
   backend "s3" {
-  bucket         = "tech-dev-terraform"
+  bucket         = "test-djhkhfkhfkjhfkh"
   key            = "ec2.tfstate"
   region         = "us-east-1"
   dynamodb_table = "terraform-lock"
