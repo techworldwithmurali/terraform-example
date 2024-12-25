@@ -26,8 +26,9 @@ stage('Clone the Repository') {
             steps {
                 dir(env.TF_DIR) {
                     sh '''
-                     echo "TF_DIR during init: ${TF_DIR}"
-                    terraform init -reconfigure -no-color'''
+                    echo 'Executing Terraform init... ${TF_DIR}'
+                    terraform init -reconfigure -no-color
+                    '''
                 }
             }
         }
@@ -37,7 +38,7 @@ stage('Clone the Repository') {
             steps {
                 script {
                     if (params.ACTION == 'plan') {
-                        echo 'Executing Terraform plan... ${env.TF_DIR}'
+                        echo 'Executing Terraform plan...'
                         dir(env.TF_DIR) {
                             sh 'terraform plan -no-color'
                         }
