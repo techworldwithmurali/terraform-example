@@ -1,6 +1,6 @@
 
 variable "ami" {
-  default = "ami-01816d07b1128cd2d"
+  default = "ami-07d9cf938edb0739b"
   type        = string
 }
 
@@ -11,7 +11,7 @@ variable "instance-type" {
 }
 
 variable "subnet-id" {
-  default = "subnet-04936efc8b77ecb70"
+  default = "subnet-0bd4519d617d733e4"
   type        = string
 }
 
