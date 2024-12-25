@@ -25,9 +25,7 @@ stage('Clone the Repository') {
        stage('Terraform Init') {
             steps {
                 dir(env.TF_DIR) {
-                    sh'
-                    terraform init -reconfigure -no-color
-                    '
+                    sh'terraform init -reconfigure -no-color'
                 }
             }
         }
