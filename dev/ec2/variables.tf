@@ -1,6 +1,6 @@
 
 variable "ami" {
-  default = "ami-07d9cf938edb0739b"
+  default = "ami-01816d07b1128cd2d"
   type        = string
 }
 
