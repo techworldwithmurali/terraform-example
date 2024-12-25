@@ -17,7 +17,7 @@ stage('Clone the Repository') {
 
        stage('Terraform Init') {
             steps {
-                dir('${params.emv}/${params.serviceName}') {
+                dir('${params.env}/${params.serviceName}') {
                     sh 'terraform init -reconfigure -no-color'
                 }
             }
@@ -29,17 +29,17 @@ stage('Clone the Repository') {
                 script {
                     if (params.ACTION == 'plan') {
                         echo 'Executing Terraform plan...'
-                        dir('${params.emv}/${params.serviceName}') {
+                        dir('${params.env}/${params.serviceName}') {
                             sh 'terraform plan -no-color'
                         }
                     } else if (params.ACTION == 'apply') {
                         echo 'Executing Terraform apply...'
-                        dir('${params.emv}/${params.serviceName}') {
+                        dir('${params.env}/${params.serviceName}') {
                             sh 'terraform apply -no-color --auto-approve'
                         }
                     } else if (params.ACTION == 'destroy') {
                         echo 'Executing Terraform destroy...'
-                        dir('${params.emv}/${params.serviceName}') {
+                        dir('${params.env}/${params.serviceName}') {
                             sh 'terraform destroy -no-color --auto-approve'
                         }
                     } else {
