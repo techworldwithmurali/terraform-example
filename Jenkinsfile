@@ -35,7 +35,7 @@ stage('Clone the Repository') {
             steps {
                 script {
                     if (params.ACTION == 'plan') {
-                        echo 'Executing Terraform plan...'
+                        echo 'Executing Terraform plan... ${env.TF_DIR}'
                         dir(env.TF_DIR) {
                             sh 'terraform plan -no-color'
                         }
