@@ -2,9 +2,15 @@ pipeline {
     agent any
    stages {
 
+       parameters {
+        string(name: 'BRANCH', defaultValue: 'main', description: 'Git branch to clone')
+    }
+
+       
+
 stage('Clone the Repository') {
             steps {
-                git branch: 'test', credentialsId: 'github-cred', url: 'https://github.com/techworldwithmurali/terraform-example.git'
+                git branch: "${params.BRANCH}", credentialsId: 'github-cred', url: 'https://github.com/techworldwithmurali/terraform-example.git'
             }
         }
 
