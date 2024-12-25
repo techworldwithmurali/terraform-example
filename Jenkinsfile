@@ -38,17 +38,17 @@ stage('Clone the Repository') {
             steps {
                 script {
                     if (params.ACTION == 'plan') {
-                        echo 'Executing Terraform plan...'
+                        echo "Executing Terraform plan... ${TF_DIR}"
                         dir(env.TF_DIR) {
                             sh 'terraform plan -no-color'
                         }
                     } else if (params.ACTION == 'apply') {
-                        echo 'Executing Terraform apply...'
+                        echo "Executing Terraform apply...${TF_DIR}"
                         dir(env.TF_DIR) {
                             sh 'terraform apply -no-color --auto-approve'
                         }
                     } else if (params.ACTION == 'destroy') {
-                        echo 'Executing Terraform destroy...'
+                        echo "Executing Terraform destroy...${TF_DIR}"
                         dir(env.TF_DIR) {
                             sh 'terraform destroy -no-color --auto-approve'
                         }
