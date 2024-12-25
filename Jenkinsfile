@@ -2,7 +2,7 @@ pipeline {
     agent any
 
         parameters {
-        string(name: 'BRANCH', defaultValue: 'main', description: 'Git branch to clone')
+        string(name: 'BRANCH', defaultValue: 'test', description: 'Git branch to clone')
             choice(name: 'ACTION', choices: ['plan', 'apply', 'destroy'], description: 'Terraform action to execute')
     }
 
