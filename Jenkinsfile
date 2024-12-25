@@ -3,6 +3,7 @@ pipeline {
 
         parameters {
         string(name: 'BRANCH', defaultValue: 'main', description: 'Git branch to clone')
+            choice(name: 'ACTION', choices: ['plan', 'apply', 'destroy'], description: 'Terraform action to execute')
     }
 
    stages {
@@ -13,6 +14,7 @@ pipeline {
 stage('Clone the Repository') {
             steps {
                 git branch: "${params.BRANCH}", credentialsId: 'github-cred', url: 'https://github.com/techworldwithmurali/terraform-example.git'
+                
             }
         }
 
