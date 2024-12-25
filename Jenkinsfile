@@ -1,11 +1,13 @@
 pipeline {
     agent any
-   stages {
 
-       parameters {
+        parameters {
         string(name: 'BRANCH', defaultValue: 'main', description: 'Git branch to clone')
     }
 
+   stages {
+
+   
        
 
 stage('Clone the Repository') {
