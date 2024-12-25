@@ -16,7 +16,7 @@ stage('Clone the Repository') {
        stage('Terraform Init') {
             steps {
                 dir('dev/ec2') {
-                    sh 'terraform init -reconfigure'
+                    sh 'terraform init -reconfigure -no-color'
                 }
             }
         }
