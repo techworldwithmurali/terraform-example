@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 1.9.0"
+  required_version = "~> 2.3.0"
   backend "s3" {
   bucket         = "tech-dev-terraform"
   key            = "ec2.tfstate"
