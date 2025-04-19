@@ -1,12 +1,12 @@
 
 variable "ami" {
-  default = "ami-01816d07b1128cd2d"
+  default = "ami-01816d07sghs636325"
   type        = string
 }
 
 
 variable "instance-type" {
-  default = "t2.medium"
+  default = "t2.micro"
   type        = string
 }
 
